@@ -19,6 +19,7 @@ namespace AddressBook
                     "3) Edit details of contacts\n" +
                     "4) Delete details of contacts\n" +
                     "5) Adding multiple details\n" +
+                    "6) Add multiple address to details\n" +
                   "Select Option:");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
@@ -39,6 +40,20 @@ namespace AddressBook
                         NewContacts.DeleteContact();
                         break;
                     case 5:
+                        NewContacts.AddContact();
+                        break;
+                    case 6:
+                        int addCount = Convert.ToInt32(Console.ReadLine());
+
+                        Dictionary<int, string> dictionary = new Dictionary<int, string>();
+
+                        for (int i = 1; i <= addCount; i++)
+                        {
+                            count++;
+                            List<NewContacts> newAdd = new List<NewContacts>();
+                            dictionary.Add(i, "New Dictionary");
+                        }
+                        Console.WriteLine(count + " Address Book Created..");
                         NewContacts.AddContact();
                         break;
                     default:

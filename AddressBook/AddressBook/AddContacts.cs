@@ -9,6 +9,7 @@ namespace AddressBook
     public class NewContacts
     {
         public static List<Contacts> person = new List<Contacts>();
+
         public static void CreateContacts()
         {
             Contacts contacts = new Contacts();
@@ -165,7 +166,7 @@ namespace AddressBook
                 contacts.zipcode = (int)Convert.ToInt32(Console.ReadLine());
 
                 Console.WriteLine("Phone Number: ");
-                contacts.phoneno = (int)Convert.ToInt64(Console.ReadLine());
+                contacts.phoneno = (int)Convert.ToInt32(Console.ReadLine());
 
                 Console.WriteLine("Enter EmailId: ");
                 contacts.email = Console.ReadLine();
