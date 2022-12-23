@@ -135,5 +135,44 @@ namespace AddressBook
                 }
             }
         }
+        // Adding of contacts
+        public static void AddContact()
+        {
+            Contacts contacts = new Contacts();
+            Console.WriteLine("Please confirm how much contact you want to create:");
+            int contactsCount = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 1; i <= contactsCount; i++)
+            {
+                Console.WriteLine("Enter details for " + i + " Contact");
+
+                Console.WriteLine("Enter FirstName: ");
+                contacts.fname = Console.ReadLine();
+
+                Console.WriteLine("Enter LastName: ");
+                contacts.lname = Console.ReadLine();
+
+                Console.WriteLine("Enter Adress: ");
+                contacts.address = Console.ReadLine();
+
+                Console.WriteLine("Enter City: ");
+                contacts.city = Console.ReadLine();
+
+                Console.WriteLine("Enter State: ");
+                contacts.state = Console.ReadLine();
+
+                Console.WriteLine("Enter Zipcode: ");
+                contacts.zipcode = (int)Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Phone Number: ");
+                contacts.phoneno = (int)Convert.ToInt64(Console.ReadLine());
+
+                Console.WriteLine("Enter EmailId: ");
+                contacts.email = Console.ReadLine();
+
+                person.Add(contacts);
+                Console.WriteLine("Contact added Successfully....");
+            }
+        }
     }
 }

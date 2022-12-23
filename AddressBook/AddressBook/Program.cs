@@ -18,6 +18,7 @@ namespace AddressBook
                     "2) Displaying the details of Contacts\n" +
                     "3) Edit details of contacts\n" +
                     "4) Delete details of contacts\n" +
+                    "5) Adding multiple details\n" +
                   "Select Option:");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
@@ -36,6 +37,9 @@ namespace AddressBook
 
                     case 4:
                         NewContacts.DeleteContact();
+                        break;
+                    case 5:
+                        NewContacts.AddContact();
                         break;
                     default:
                         Console.WriteLine("Choose valid option");
