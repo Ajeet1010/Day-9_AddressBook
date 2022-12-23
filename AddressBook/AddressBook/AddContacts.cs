@@ -36,7 +36,69 @@ namespace AddressBook
 
             Console.WriteLine("Enter E-mail: ");
             contacts.email = Console.ReadLine();
-            
+
+        }
+        public static void EditContact()
+        {
+            Console.WriteLine("Enter the First Name: ");
+            string name = Console.ReadLine();
+            foreach (var data in person)
+            {
+                if (person.Contains(data))
+                {
+                    if (data.fname == name)
+                    {
+                        Console.WriteLine("To edit contacts enter 1.First Name\n 2.Last Name\n 3.Address\n 4.City\n 5.State\n 6.Zipcode\n 7.PhoneNumber\n");
+                        int option = Convert.ToInt32(Console.ReadLine());
+
+                        switch (option)
+                        {
+                            case 1:
+                                string fname = Console.ReadLine();
+                                data.fname = fname;
+                                break;
+
+                            case 2:
+                                string lname = Console.ReadLine();
+                                data.lname = lname;
+                                break;
+
+                            case 3:
+                                string address = Console.ReadLine();
+                                data.address = address;
+                                break;
+
+                            case 4:
+                                string city = Console.ReadLine();
+                                data.city = city;
+                                break;
+
+                            case 5:
+                                string state = Console.ReadLine();
+                                data.state = state;
+                                break;
+
+                            case 6:
+                                int zipcode = Convert.ToInt32(Console.ReadLine());
+                                data.zipcode = zipcode;
+                                break;
+
+                            case 7:
+                                int phoneNumber = Convert.ToInt32(Console.ReadLine());
+                                data.phoneno = phoneNumber;
+                                break;
+
+                            default:
+                                Console.WriteLine("Choose valid option");
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Name doesnot match");
+                    }
+                }
+            }
         }
     }
 }

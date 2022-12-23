@@ -12,6 +12,7 @@ namespace AddressBook
             public static void Main(string[] args)
             {
                 AddressBook.NewContacts.CreateContacts();
+                AddressBook.NewContacts.EditContact();
 
             }
     }
