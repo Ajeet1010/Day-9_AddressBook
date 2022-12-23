@@ -38,6 +38,17 @@ namespace AddressBook
             contacts.email = Console.ReadLine();
 
         }
+        // fetching the data from user
+        public static void Display()
+        {
+            foreach (var data in person)
+            {
+                Console.WriteLine();
+                Console.WriteLine("1.FirstName: " + data.fname + "2.LastName: " + data.lname + "3.Address: " + data.address +
+                "4.City: " + data.city + "5.State: " + data.state + "6.Zipcode: " + data.zipcode + "7.PhoneNumber: " + data.phoneno);
+            }
+        }
+
         public static void EditContact()
         {
             Console.WriteLine("Enter the First Name: ");
@@ -96,6 +107,30 @@ namespace AddressBook
                     else
                     {
                         Console.WriteLine("Name doesnot match");
+                    }
+                }
+            }
+        }
+        // deleting the details of contacts
+        public static void DeleteContact()
+        {
+            Contacts contacts = new Contacts();
+
+            Console.WriteLine("Enter the First Name of the Person to be deleted: ");
+            string Remove = Console.ReadLine();
+            string name = Console.ReadLine();
+            foreach (var data in person)
+            {
+                if (person.Contains(data))
+                {
+                    if (data.fname.ToUpper() == Remove.ToUpper())
+                    {
+                        person.Remove(contacts);
+                        Console.WriteLine("Contact is deleted");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Contact is not present");
                     }
                 }
             }
